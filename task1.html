@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>test input</title>
+    <title>Opinion Poll</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css"></head>
+    <link rel="stylesheet" href="css/bootstrap-3.3.6/bootstrap.min.css">
+   <!--  <link rel="stylesheet" href="css/bootstrap-3.3.6/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    </head>
 <body>
-   <form action="#" name="TestForm" method="post">
-   		<fieldset>
-			<legend>Opinion Poll</legend>
-			<p>
-				<label for="name" >Input your name:</label>
-				<input type="text" id="name" placeholder="Johny Depp" pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}" required autofocus></p>
-			<p>
-				<label for="bday" >Your age:</label>
-				<input type="number" id="bday" placeholder="16 or more" min="16" max="200" required></p>
-			<p>
-				<label for="bdaydate" >Your age:</label>
-				<input type="date" id="bdaydate" placeholder="16 or more" max="2000-01-01" required></p>
-			<p>
-				<label for="idNum" >ID Number:</label>
-				<input type="text" id="idNum" placeholder="KP 950583" 
-				pattern="[A-Z]{2,}\s[0-9]{6}" required ></p>
-			<p>
-				<label for="mail" >Input e-mail:</label>
-				<input type="email" id="mail" placeholder="jacksparrow@gmail.com" required></p>
-			<p>
-				<label for="gender">Gender:</label>
-				<select name="gender" id="gender">
+<div class="col-xs-8 col-xs-offset-2 col-md-4 col-md-offset-4 ">
+	<form action="#" name="TestForm" method="post" id="loginform">
+		<div class="form-group">
+			<label for="InputName"><!-- Input your name: --></label>
+			<input type="text" name="username" class="form-control" id="InputName" placeholder="First name and Last name" data-toggle="tooltip" title="Example: Johny Depp" data-placement="right"></div>
+
+		<div class="form-group">
+			<label for="InputBirthday"><!-- Your Birthday:--></label>
+			<input type="date" name="birthday" class="form-control" id="InputBirthday" placeholder="Your Birthday"></div>
+
+		<div class="form-group">
+			<label for="InputEmail"><!-- Input e-mail: --></label>
+			<input type="email" name="mail" class="form-control" id="InputEmail" placeholder="Enter your Email" data-toggle="tooltip" title="Example: jacksparrow@gmail.com" data-placement="right"></div>
+
+		<div class="form-group">
+			<label for="InputID"><!-- ID Number: --></label>
+			<input type="text" name="userid" class="form-control" id="InputID" placeholder="Enter your ID Number" data-toggle="tooltip" title="Example: KP934345" data-placement="right"></div>
+
+		<div class="row">
+			<div class="col-xs-4 col-md-4">
+		<div class="form-group">
+			<label for="ChooseGender"><!-- Gender: --></label>
+			<select name="gender" id="gender" class="form-control">	
 					<option selected>Other</option>
 					<option value="male">Male</option>
 					<option value="female">Female</option>
 				</select>
-			</p>
-			<p>
-				<label for="opinion" >Opinion:</label>
-			</p>
-			<p>
-				<textarea name="Text1" id="opinion" cols="35" rows="5"></textarea>
-			</p>
-			<p>
-			<input type="submit" value="Submit">
-			<input type="reset" value="Reset">
-			</p>
-		</fieldset>
-   </form>
+			</div>
+		</div>
+		<div class="col-xs-8 col-md-8">
+		<label for="opinion" ><!-- Opinion: --></label>
+		<textarea class="form-control" rows="5" cols="35" id="opinion" placeholder="Your opinion..."></textarea>
+	</div>
+	</div>
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
+	</div>
+
+
+  
+   <script src="js/jquery-1.5.2.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+   <script src="js/jquery.validate.min.js"></script>
+   <script src="js/additional-methods.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/myscripts.js"></script>
 </body>
 </html>
