@@ -1,9 +1,8 @@
-
 $(document).ready(function(){
 $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 })
-    $("#loginform").validate({
+    var validator = $("#loginform").validate({
         
        rules:{ 
         
@@ -28,6 +27,9 @@ $(function () {
             gender:{
                 required: true,
             },
+			opinion:{
+                required: true,
+            },
 
             birthday:{
                 required: true,
@@ -38,36 +40,40 @@ $(function () {
        messages:{
         
             username:{
-                required: "This field is required",
-                minlength: "Please, enter at least 3 characters",
-                maxlength: "Please, enter no more than 11 characters.",
-                pattern: "Please, use example! (Full name only)",
+                required: "This field is required ",
+                minlength: "Please, enter at least 3 characters ",
+                maxlength: "Please, enter no more than 11 characters. ",
+                pattern: "Please, use example! (Full name only) ",
             },
             
             userid:{
-                required: "Please, 2 leters and 6 numbers",
-                pattern: "Please, 2 leters and 6 numbers",
+                required: "Please, 2 leters and 6 numbers ",
+                pattern: "Please, 2 leters and 6 numbers ",
                 
             },
 
             birthday:{
-                required: "This field is required",
-                date: "Please, use example!",
+                required: "This field is required ",
+                date: "Please, use example! ",
 
             },
 
             mail:{
-                required: "This field is required",
-                email: "Please, use example",
+                required: "This field is required ",
+                email: "Please, use example: jacksparrow@gmail.com ",
             },
 
             gender:{
-                required: "This field is required",
+                required: "This field is required ",
             }
         
        }
         
     });
-
+	
+	$(".reset").click(function() {
+		validator.resetForm();
+		$(this).closest('form').find("input, textarea, select").val("");
+	});
 
 }); //end of ready
